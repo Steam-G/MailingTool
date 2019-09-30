@@ -22,5 +22,11 @@ namespace MailingTool
             TreeClientsForm treeClients = new TreeClientsForm();
             treeClients.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EmailSenderForm emailSender = new EmailSenderForm();
+            emailSender.Show();
+        }
     }
 }
