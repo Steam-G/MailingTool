@@ -36,12 +36,14 @@ namespace MailingTool
         }
 
 
-        List<Person> persons = new List<Person>();
+        //-------------------------------------------------------------------------
+
+        List<PersonRecipient> persons = new List<PersonRecipient>();
 
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            Person person = new Person("", "","");
-            EditPersonForm editForm = new EditPersonForm(person);
+            PersonRecipient person = new PersonRecipient("", "","", "");
+            EditPersonRecipientForm editForm = new EditPersonRecipientForm(person);
             if (editForm.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -55,9 +57,9 @@ namespace MailingTool
             if (personsListView.SelectedIndices.Count == 0)
                 return;
 
-            Person person = persons[personsListView.SelectedIndices[0]];
+            PersonRecipient person = persons[personsListView.SelectedIndices[0]];
 
-            EditPersonForm editForm = new EditPersonForm(person);
+            EditPersonRecipientForm editForm = new EditPersonRecipientForm(person);
             if (editForm.ShowDialog() == DialogResult.OK)
                 personsListView.Invalidate();
         }
@@ -66,10 +68,10 @@ namespace MailingTool
         {
             if (e.ItemIndex >= 0 && e.ItemIndex < persons.Count)
             {
-                e.Item = new ListViewItem(persons[e.ItemIndex].FirstName);
-                e.Item.SubItems.Add(persons[e.ItemIndex].LastName);
-                e.Item.SubItems.Add(persons[e.ItemIndex].Age.ToString());
+                e.Item = new ListViewItem(persons[e.ItemIndex].Organization);
+                e.Item.SubItems.Add(persons[e.ItemIndex].RecipientName);
                 e.Item.SubItems.Add(persons[e.ItemIndex].EMail);
+                e.Item.SubItems.Add(persons[e.ItemIndex].Note);
             }
         }
 
