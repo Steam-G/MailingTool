@@ -72,6 +72,7 @@
       <DependentUpon>Newsletter.cs</DependentUpon>
     </Compile>
     <Compile Include="EditClients\Person.cs" />
+    <Compile Include="EditClients\PersonRecipient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EditClients\TreeClientsForm.cs">
