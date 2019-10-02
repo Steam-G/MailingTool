@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 
 namespace MailingTool
 {
-    class Person : IEnumerable
+    public class Person : IEnumerable
     {
         public delegate void NameChanged(Object sender, NameChangedEvent args);
 
-        public event NameChanged FirstNameChanged;
-        public event NameChanged LastNameChanged;
-        public event NameChanged EMailChanged;
+        public event NameChanged FirstNameChanged; //имя изменилось - событие
+        public event NameChanged LastNameChanged; //фамилия поменялась - событие
+        public event NameChanged EMailChanged; // почта изменилась - событие
 
         public event EventHandler AgeChanged;
 
-        public Person(string firstName, string lastName)
+        public Person(string firstName, string lastName, string eMail)
         {
             FirstName = firstName;
             LastName = lastName;
+            EMail = eMail;
         }
 
         #region Свойства
@@ -81,8 +82,12 @@ namespace MailingTool
             {
                 if (EMailChanged != null)
                 {
-                    //???????????????????????????????????????
+                    NameChangedEvent changeevent = new NameChangedEvent(value, NameChangedEvent.NameChangingKind.FirstName);
+                    EMailChanged(this, changeevent);
+                    if (changeevent.Canceled)
+                        return;
                 }
+                email = value;
             }
         }
 
@@ -123,9 +128,9 @@ namespace MailingTool
 
         ArrayList Children = new ArrayList();
 
-        public void AddChild(string firstName, string lastName)
+        public void AddChild(string firstName, string lastName, string eMail)
         {
-            Children.Add(new Person(firstName, lastName));
+            Children.Add(new Person(firstName, lastName, eMail));
         }
 
         public void DeleteChild(int index)

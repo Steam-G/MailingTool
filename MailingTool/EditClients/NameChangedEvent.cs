@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MailingTool
 {
-    class NameChangedEvent
+    public class NameChangedEvent: EventArgs
     {
         public enum NameChangingKind { FirstName, LastName }
 
