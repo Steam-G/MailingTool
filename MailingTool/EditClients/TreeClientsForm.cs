@@ -80,6 +80,24 @@ namespace MailingTool
             personsListView.Invalidate();
         }
 
+        private void delPersonButton_Click(object sender, EventArgs e)
+        {
+            if (personsListView.SelectedIndices.Count == 0)
+                return;
+            // НЕ РАБОТАЕТ МАССОВОЕ УДАЛЕНИЕ ИЗ СПИСКА, ИСПОЛЬЗУЮТСЯ ИНДЕКСЫ
+            while (personsListView.SelectedIndices.Count > 0)
+                    {
+                int indeks = personsListView.SelectedIndices[0];
+                
+                personsListView.SelectedIndices.Remove(indeks);
+                personListObj.PersonList.RemoveAt(indeks);
+                //personsListView.SelectedIndices.Remove(personsListView.SelectedIndices[0]);
+                //   }
+                personsListView.VirtualListSize = personListObj.PersonList.Count;
+            personsListView.Invalidate();
+        }
+        }
+
         // Кнопка редактирования выбранного в списке пользователя
         private void editPersonButton_Click(object sender, EventArgs e)
         {

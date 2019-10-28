@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Узел6");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Узел7");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Узел1", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Узел3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Узел4");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Узел5");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Узел2", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Узел8");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Узел9");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Узел6");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Узел7");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Узел1", new System.Windows.Forms.TreeNode[] {
+            treeNode21,
+            treeNode22});
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Узел3");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Узел4");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Узел5");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Узел2", new System.Windows.Forms.TreeNode[] {
+            treeNode24,
+            treeNode25,
+            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode23,
+            treeNode27});
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Узел8");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Узел9");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addPersonButton = new System.Windows.Forms.Button();
             this.editPersonButton = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // treeView1
@@ -64,30 +65,30 @@
             this.treeView1.LabelEdit = true;
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел6";
-            treeNode1.Text = "Узел6";
-            treeNode2.Name = "Узел7";
-            treeNode2.Text = "Узел7";
-            treeNode3.Name = "Узел1";
-            treeNode3.Text = "Узел1";
-            treeNode4.Name = "Узел3";
-            treeNode4.Text = "Узел3";
-            treeNode5.Name = "Узел4";
-            treeNode5.Text = "Узел4";
-            treeNode6.Name = "Узел5";
-            treeNode6.Text = "Узел5";
-            treeNode7.Name = "Узел2";
-            treeNode7.Text = "Узел2";
-            treeNode8.Name = "Узел0";
-            treeNode8.Text = "Узел0";
-            treeNode9.Name = "Узел8";
-            treeNode9.Text = "Узел8";
-            treeNode10.Name = "Узел9";
-            treeNode10.Text = "Узел9";
+            treeNode21.Name = "Узел6";
+            treeNode21.Text = "Узел6";
+            treeNode22.Name = "Узел7";
+            treeNode22.Text = "Узел7";
+            treeNode23.Name = "Узел1";
+            treeNode23.Text = "Узел1";
+            treeNode24.Name = "Узел3";
+            treeNode24.Text = "Узел3";
+            treeNode25.Name = "Узел4";
+            treeNode25.Text = "Узел4";
+            treeNode26.Name = "Узел5";
+            treeNode26.Text = "Узел5";
+            treeNode27.Name = "Узел2";
+            treeNode27.Text = "Узел2";
+            treeNode28.Name = "Узел0";
+            treeNode28.Text = "Узел0";
+            treeNode29.Name = "Узел8";
+            treeNode29.Text = "Узел8";
+            treeNode30.Name = "Узел9";
+            treeNode30.Text = "Узел9";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9,
-            treeNode10});
+            treeNode28,
+            treeNode29,
+            treeNode30});
             this.treeView1.ShowNodeToolTips = true;
             this.treeView1.Size = new System.Drawing.Size(366, 81);
             this.treeView1.TabIndex = 0;
@@ -181,12 +182,23 @@
             this.editPersonButton.UseVisualStyleBackColor = true;
             this.editPersonButton.Click += new System.EventHandler(this.editPersonButton_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(125, 394);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Удалить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.delPersonButton_Click);
+            // 
             // TreeClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 429);
             this.Controls.Add(this.editPersonButton);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.addPersonButton);
             this.Controls.Add(this.personsListView);
             this.Controls.Add(this.button3);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button addPersonButton;
         private System.Windows.Forms.Button editPersonButton;
+        private System.Windows.Forms.Button button4;
     }
 }
