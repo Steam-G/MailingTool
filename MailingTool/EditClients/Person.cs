@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MailingTool
 {
+    /// <summary>
+    /// Класс описывающий человека
+    /// </summary>
     public class Person : IEnumerable
     {
         public delegate void NameChanged(Object sender, NameChangedEvent args);

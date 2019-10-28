@@ -89,12 +89,12 @@
             treeNode9,
             treeNode10});
             this.treeView1.ShowNodeToolTips = true;
-            this.treeView1.Size = new System.Drawing.Size(234, 81);
+            this.treeView1.Size = new System.Drawing.Size(366, 81);
             this.treeView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 12);
+            this.button1.Location = new System.Drawing.Point(384, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 23);
             this.button1.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(252, 41);
+            this.button2.Location = new System.Drawing.Point(384, 43);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(179, 23);
             this.button2.TabIndex = 1;
@@ -114,7 +114,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(252, 70);
+            this.button3.Location = new System.Drawing.Point(384, 72);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(179, 23);
             this.button3.TabIndex = 1;
@@ -132,13 +132,14 @@
             this.personsListView.FullRowSelect = true;
             this.personsListView.Location = new System.Drawing.Point(11, 99);
             this.personsListView.Name = "personsListView";
-            this.personsListView.Size = new System.Drawing.Size(420, 289);
+            this.personsListView.Size = new System.Drawing.Size(552, 289);
             this.personsListView.TabIndex = 2;
             this.personsListView.UseCompatibleStateImageBehavior = false;
             this.personsListView.View = System.Windows.Forms.View.Details;
             this.personsListView.VirtualMode = true;
             this.personsListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.personsListView_RetrieveVirtualItem);
             this.personsListView.SelectedIndexChanged += new System.EventHandler(this.personsListView_SelectedIndexChanged);
+            this.personsListView.DoubleClick += new System.EventHandler(this.editPersonButton_Click);
             // 
             // columnHeader1
             // 
@@ -172,7 +173,7 @@
             // 
             // editPersonButton
             // 
-            this.editPersonButton.Location = new System.Drawing.Point(310, 394);
+            this.editPersonButton.Location = new System.Drawing.Point(442, 394);
             this.editPersonButton.Name = "editPersonButton";
             this.editPersonButton.Size = new System.Drawing.Size(121, 23);
             this.editPersonButton.TabIndex = 4;
@@ -184,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 429);
+            this.ClientSize = new System.Drawing.Size(575, 429);
             this.Controls.Add(this.editPersonButton);
             this.Controls.Add(this.addPersonButton);
             this.Controls.Add(this.personsListView);

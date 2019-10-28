@@ -43,7 +43,7 @@
             // cancelButton
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(146, 145);
+            this.cancelButton.Location = new System.Drawing.Point(252, 116);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 15;
@@ -53,7 +53,7 @@
             // okButton
             // 
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(65, 145);
+            this.okButton.Location = new System.Drawing.Point(171, 116);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 14;
@@ -63,9 +63,9 @@
             // 
             // recipientNameTextBox
             // 
-            this.recipientNameTextBox.Location = new System.Drawing.Point(69, 38);
+            this.recipientNameTextBox.Location = new System.Drawing.Point(103, 38);
             this.recipientNameTextBox.Name = "recipientNameTextBox";
-            this.recipientNameTextBox.Size = new System.Drawing.Size(183, 20);
+            this.recipientNameTextBox.Size = new System.Drawing.Size(224, 20);
             this.recipientNameTextBox.TabIndex = 11;
             // 
             // label2
@@ -79,9 +79,9 @@
             // 
             // organizationTextBox
             // 
-            this.organizationTextBox.Location = new System.Drawing.Point(69, 12);
+            this.organizationTextBox.Location = new System.Drawing.Point(103, 12);
             this.organizationTextBox.Name = "organizationTextBox";
-            this.organizationTextBox.Size = new System.Drawing.Size(183, 20);
+            this.organizationTextBox.Size = new System.Drawing.Size(224, 20);
             this.organizationTextBox.TabIndex = 9;
             // 
             // label1
@@ -95,9 +95,9 @@
             // 
             // eMailTextBox
             // 
-            this.eMailTextBox.Location = new System.Drawing.Point(69, 64);
+            this.eMailTextBox.Location = new System.Drawing.Point(103, 64);
             this.eMailTextBox.Name = "eMailTextBox";
-            this.eMailTextBox.Size = new System.Drawing.Size(183, 20);
+            this.eMailTextBox.Size = new System.Drawing.Size(224, 20);
             this.eMailTextBox.TabIndex = 17;
             // 
             // label4
@@ -111,9 +111,9 @@
             // 
             // noteTextBox
             // 
-            this.noteTextBox.Location = new System.Drawing.Point(69, 90);
+            this.noteTextBox.Location = new System.Drawing.Point(103, 90);
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(183, 20);
+            this.noteTextBox.Size = new System.Drawing.Size(224, 20);
             this.noteTextBox.TabIndex = 19;
             // 
             // label3
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(265, 180);
+            this.ClientSize = new System.Drawing.Size(339, 148);
             this.Controls.Add(this.noteTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.eMailTextBox);
@@ -146,6 +146,7 @@
             this.MinimizeBox = false;
             this.Name = "EditPersonRecipientForm";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditPersonForm";
             this.ResumeLayout(false);
             this.PerformLayout();

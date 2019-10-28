@@ -10,7 +10,7 @@ namespace MailingTool
     /// <summary>
     /// Класс описывающий получателя электронной рассылки.
     /// </summary>
-    public class PersonRecipient : IEnumerable
+    public class PersonRecipient //: IEnumerable
     {
         public delegate void NameChanged(Object sender, NameChangedEvent args);
 
@@ -130,44 +130,44 @@ namespace MailingTool
 
         #endregion
 
-        #region Дети (осталось от копирования)
+        //#region Дети (осталось от копирования)
 
-        ArrayList Children = new ArrayList();
+        //ArrayList Children = new ArrayList();
 
-        public void AddChild(string organization, string recipientName, string email, string note)
-        {
-            Children.Add(new PersonRecipient(organization, recipientName, email, note));
-        }
+        //public void AddChild(string organization, string recipientName, string email, string note)
+        //{
+        //    Children.Add(new PersonRecipient(organization, recipientName, email, note));
+        //}
 
-        public void DeleteChild(int index)
-        {
-            Children.RemoveAt(index);
-        }
+        //public void DeleteChild(int index)
+        //{
+        //    Children.RemoveAt(index);
+        //}
 
-        public PersonRecipient GetChild(int index)
-        {
-            return (PersonRecipient)Children[index];
-        }
+        //public PersonRecipient GetChild(int index)
+        //{
+        //    return (PersonRecipient)Children[index];
+        //}
 
-        public PersonRecipient this[int index]
-        {
-            get { return (PersonRecipient)Children[index]; }
-        }
+        //public PersonRecipient this[int index]
+        //{
+        //    get { return (PersonRecipient)Children[index]; }
+        //}
 
-        public int GetChildrenNumber()
-        {
-            return Children.Count;
-        }
+        //public int GetChildrenNumber()
+        //{
+        //    return Children.Count;
+        //}
 
-        #endregion
+        //#endregion
 
-        #region IEnumerable Members
+        //#region IEnumerable Members
 
-        public IEnumerator GetEnumerator()
-        {
-            return Children.GetEnumerator();
-        }
+        //public IEnumerator GetEnumerator()
+        //{
+        //    return Children.GetEnumerator();
+        //}
 
-        #endregion
+        //#endregion
     }
 }
