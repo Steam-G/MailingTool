@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MailingTool.EditClients;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,10 @@ namespace MailingTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TreeClientsForm treeClients = new TreeClientsForm();
-            treeClients.Show();
+            //TreeClientsForm treeClients = new TreeClientsForm();
+            //treeClients.Show();
+            ClientsForm clients = new ClientsForm();
+            clients.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

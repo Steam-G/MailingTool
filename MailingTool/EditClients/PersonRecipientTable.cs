@@ -1,43 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MailingTool.EditClients;
 using Newtonsoft.Json;
+using System.IO;
 
-namespace MailingTool
+namespace MailingTool.EditClients
 {
-    public partial class TreeClientsForm : Form
+    public partial class PersonRecipientTable : UserControl
     {
         PersonListObj personListObj = new PersonListObj();
         PersonListObj buferListObj = new PersonListObj();
 
-        public TreeClientsForm()
+        public PersonRecipientTable()
         {
             InitializeComponent();
-
             personListObj.PersonList = new List<PersonRecipient> { };
 
             // Создаем объект с данными из файла .json, если файла нет то просто заводим новый пустой объект
             var PersonObj = File.Exists(path: "person.json") ? JsonConvert.DeserializeObject<PersonListObj>(File.ReadAllText("person.json")) : new PersonListObj();
-            
+
             personListObj = PersonObj;
             buferListObj = personListObj;
             bool eq = personListObj.Equals(buferListObj);
             // Обновляем таблицу с данными
-            personsListView.VirtualListSize = personListObj.PersonList.Count;
-            personsListView.Invalidate();
-
-            //this.FormClosing += new System.EventHandler(closeForm);
-            //this.addPersonButton.Click += new System.EventHandler(this.addPersonButton_Click);
+            try {
+                personsListView.VirtualListSize = personListObj.PersonList.Count;
+                personsListView.Invalidate();
+            }
+            catch { }
+            
         }
-
 
         // Кнопка добавления в список нового пользователя
         private void addPersonButton_Click(object sender, EventArgs e)
@@ -70,7 +69,7 @@ namespace MailingTool
             if (personsListView.SelectedIndices.Count == 0)
                 return;
             // НЕ РАБОТАЕТ МАССОВОЕ УДАЛЕНИЕ ИЗ СПИСКА, ИСПОЛЬЗУЮТСЯ ИНДЕКСЫ
-            for (int i= personsListView.SelectedIndices.Count-1; i>=0 ; i--)
+            for (int i = personsListView.SelectedIndices.Count - 1; i >= 0; i--)
             {
                 int indeks = personsListView.SelectedIndices[i];
                 personListObj.PersonList.RemoveAt(indeks);
@@ -80,7 +79,7 @@ namespace MailingTool
                 if (personsListView.SelectedIndices.Count != 0) personsListView.SelectedIndices.Clear();
             }
             catch { }
-            
+
 
             personsListView.VirtualListSize = personListObj.PersonList.Count;
             personsListView.Invalidate();
@@ -125,16 +124,6 @@ namespace MailingTool
         private void personsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-
-
-        private void TreeClientsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (buferListObj.Equals(personListObj))
-                MessageBox.Show("Данные не менялись");
-            else
-                MessageBox.Show("Данные изменились");
         }
     }
 }
