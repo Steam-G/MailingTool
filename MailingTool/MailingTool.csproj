@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditClients\ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClients\ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditClients\EditPersonRecipientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
       <DependentUpon>EditPersonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditClients\PersonListObj.cs" />
+    <Compile Include="EditClients\PersonRecipientTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditClients\PersonRecipientTable.Designer.cs">
+      <DependentUpon>PersonRecipientTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Email\ClassMailSender.cs" />
     <Compile Include="Email\EmailSenderForm.cs">
       <SubType>Form</SubType>
@@ -91,11 +103,17 @@
     <Compile Include="EditClients\TreeClientsForm.Designer.cs">
       <DependentUpon>TreeClientsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditClients\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditClients\EditPersonRecipientForm.resx">
       <DependentUpon>EditPersonRecipientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditClients\EditPersonForm.resx">
       <DependentUpon>EditPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditClients\PersonRecipientTable.resx">
+      <DependentUpon>PersonRecipientTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Email\EmailSenderForm.resx">
       <DependentUpon>EmailSenderForm.cs</DependentUpon>
