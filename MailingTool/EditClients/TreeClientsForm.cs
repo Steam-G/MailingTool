@@ -42,7 +42,7 @@ namespace MailingTool
         // Кнопка добавления в список нового пользователя
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            PersonRecipient person = new PersonRecipient("", "", "", "");
+            PersonRecipient person = new PersonRecipient("", "", "", "","",null);
 
             EditPersonRecipientForm editForm = new EditPersonRecipientForm(person);
 

@@ -18,14 +18,17 @@ namespace MailingTool
         public event NameChanged RecipientNameChanged;
         public event NameChanged EMailChanged;
         public event NameChanged NoteChanged;
+        public event NameChanged ObjectNameChanged;
 
-        public PersonRecipient(string organization, string recipientName, string email, string note)
+        public PersonRecipient(string organization, string recipientName, string email, string note, string objectName, List<string> listIdRecipient)
         {
             //...........
             Organization = organization;
             RecipientName = recipientName;
             EMail = email;
             Note = note;
+            ObjectName = objectName;
+            ListIdRecipient = listIdRecipient;
         }
 
         #region Свойства
@@ -97,6 +100,36 @@ namespace MailingTool
             }
         }
 
+        string objectName;
+        public string ObjectName
+        {
+            get { return objectName; }
+            set
+            {
+                if (ObjectNameChanged != null)
+                {
+                    NameChangedEvent changeevent = new NameChangedEvent(value, NameChangedEvent.NameChangingKind.FirstName);
+                    ObjectNameChanged(this, changeevent);
+                    if (changeevent.Canceled)
+                        return;
+                }
+                objectName = value;
+            }
+        }
+
+        List<string> listIdRecipient;
+        public List<string> ListIdRecipient
+        {
+            get { return listIdRecipient; }
+            set
+            {
+                if (value != null)
+                {
+                    listIdRecipient = value;
+                }
+
+            }
+        }
         #endregion
 
         #region Унаследованные методы от Object
@@ -127,6 +160,8 @@ namespace MailingTool
 
             return "Объекты разные";
         }
+
+        
 
         #endregion
 

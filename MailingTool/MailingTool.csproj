@@ -66,6 +66,12 @@
     <Compile Include="EditClients\EditPersonForm.Designer.cs">
       <DependentUpon>EditPersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditClients\EventRecipientVal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditClients\EventRecipientVal.Designer.cs">
+      <DependentUpon>EventRecipientVal.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditClients\PersonListObj.cs" />
     <Compile Include="EditClients\PersonRecipientTable.cs">
       <SubType>UserControl</SubType>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditClients\EditPersonForm.resx">
       <DependentUpon>EditPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditClients\EventRecipientVal.resx">
+      <DependentUpon>EventRecipientVal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditClients\PersonRecipientTable.resx">
       <DependentUpon>PersonRecipientTable.cs</DependentUpon>

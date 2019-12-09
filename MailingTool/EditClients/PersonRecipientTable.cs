@@ -18,6 +18,9 @@ namespace MailingTool.EditClients
         PersonListObj personListObj = new PersonListObj();
         PersonListObj buferListObj = new PersonListObj();
 
+        public event EventHandler SelectedIndexChanged;
+        
+
         public PersonRecipientTable()
         {
             InitializeComponent();
@@ -41,7 +44,7 @@ namespace MailingTool.EditClients
         // Кнопка добавления в список нового пользователя
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            PersonRecipient person = new PersonRecipient("", "", "", "");
+            PersonRecipient person = new PersonRecipient("", "", "", "","",null);
 
             EditPersonRecipientForm editForm = new EditPersonRecipientForm(person);
 
@@ -102,6 +105,19 @@ namespace MailingTool.EditClients
             File.WriteAllText("person.json", JsonConvert.SerializeObject(personListObj, Formatting.Indented));
         }
 
+        public PersonRecipient GetRecipient()
+        {
+            if (personsListView.SelectedIndices.Count == 0)
+                return null;
+            PersonRecipient person = personListObj.PersonList[personsListView.SelectedIndices[0]];
+            return person;
+        }
+
+        public void SaveToFile()
+        {
+            File.WriteAllText("person.json", JsonConvert.SerializeObject(personListObj, Formatting.Indented));
+        }
+
         // Работа с виртуальными элементами (имеет смысл при работе с большими списками)
         private void personsListView_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
@@ -121,9 +137,12 @@ namespace MailingTool.EditClients
             //}
         }
 
-        private void personsListView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void personsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.SelectedIndexChanged != null)
+                this.SelectedIndexChanged(this, e);
         }
+
+        
     }
 }
