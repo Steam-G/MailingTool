@@ -84,6 +84,7 @@ namespace MailingTool
         {
             if (personsListView.SelectedIndices.Count == 0)
                 return;
+
             // НЕ РАБОТАЕТ МАССОВОЕ УДАЛЕНИЕ ИЗ СПИСКА, ИСПОЛЬЗУЮТСЯ ИНДЕКСЫ
             while (personsListView.SelectedIndices.Count > 0)
                     {
