@@ -16,12 +16,21 @@ namespace MailingTool.EditClients
         List<string> ObjectList = new List<string>{"Качалка 1", "Качалка 2", "Качалка 3", "Качалка 4", "Качалка 5", "Качалка 6"}; // Эти данные надо будет забирать программно
         List<string> EventList = new List<string> {"Прогноз","Техническое состояние","Отчет суточный","Отчет недельный","Отчет месячный" }; // Эти данные надо будет забирать программно
 
+        List<string> _selectedEvents = new List<string>();
+
         public event EventHandler btnApply_Click;
 
         public EventRecipientVal()
         {
             InitializeComponent();
-            Setup();
+            //Setup();
+            
+            comboBoxObject.DataSource = ObjectList;
+            comboBoxObject.Text = "Выберите объект";
+
+            checkedListBoxEvent.Items.Clear();
+            for (int i = 0; i < EventList.Count; i++)
+                checkedListBoxEvent.Items.Add(EventList[i], false);
         }
 
         public void Setup()
@@ -68,6 +77,22 @@ namespace MailingTool.EditClients
         private void btnDefault_Click(object sender, EventArgs e)
         {
             Setup();
+        }
+
+        private void comboBoxObject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _GetPersonRecipient.ObjectName = comboBoxObject.Text;
+        }
+
+        private void checkedListBoxEvent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _selectedEvents.Clear();
+            for (int i=0; i<checkedListBoxEvent.Items.Count; i++)
+            {
+                if (checkedListBoxEvent.GetItemCheckState(i) == CheckState.Checked)
+                    _selectedEvents.Add(checkedListBoxEvent.Items[i].ToString());
+            }
+            _GetPersonRecipient.ListIdRecipient = _selectedEvents;
         }
     }
 

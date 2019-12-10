@@ -90,6 +90,7 @@
             this.checkedListBoxEvent.Name = "checkedListBoxEvent";
             this.checkedListBoxEvent.Size = new System.Drawing.Size(189, 75);
             this.checkedListBoxEvent.TabIndex = 2;
+            this.checkedListBoxEvent.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxEvent_SelectedIndexChanged);
             // 
             // comboBoxObject
             // 
@@ -108,6 +109,7 @@
             this.comboBoxObject.Size = new System.Drawing.Size(189, 21);
             this.comboBoxObject.TabIndex = 1;
             this.comboBoxObject.Text = "Выберите объект";
+            this.comboBoxObject.SelectedIndexChanged += new System.EventHandler(this.comboBoxObject_SelectedIndexChanged);
             // 
             // EventRecipientVal
             // 
