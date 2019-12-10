@@ -23,25 +23,26 @@ namespace MailingTool.EditClients
         public EventRecipientVal()
         {
             InitializeComponent();
-            //Setup();
+            Setup();
             
-            comboBoxObject.DataSource = ObjectList;
-            comboBoxObject.Text = "Выберите объект";
+            //comboBoxObject.DataSource = ObjectList;
+            //comboBoxObject.Text = "Выберите объект";
 
-            checkedListBoxEvent.Items.Clear();
-            for (int i = 0; i < EventList.Count; i++)
-                checkedListBoxEvent.Items.Add(EventList[i], false);
+            //checkedListBoxEvent.Items.Clear();
+            //for (int i = 0; i < EventList.Count; i++)
+            //    checkedListBoxEvent.Items.Add(EventList[i], false);
         }
 
         public void Setup()
         {
-            comboBoxObject.Text = "Выберите объект";
             comboBoxObject.DataSource = ObjectList;
-            
+            comboBoxObject.Text = "Выберите объект";
+            comboBoxObject.Invalidate();
 
             checkedListBoxEvent.Items.Clear();
             for (int i=0; i< EventList.Count;i++)
             checkedListBoxEvent.Items.Add(EventList[i],false);
+
         }
 
         public PersonRecipient GetPersonRecipient
@@ -86,13 +87,21 @@ namespace MailingTool.EditClients
 
         private void checkedListBoxEvent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedEvents.Clear();
-            for (int i=0; i<checkedListBoxEvent.Items.Count; i++)
+            try
             {
-                if (checkedListBoxEvent.GetItemCheckState(i) == CheckState.Checked)
-                    _selectedEvents.Add(checkedListBoxEvent.Items[i].ToString());
+                _selectedEvents.Clear();
+                for (int i = 0; i < checkedListBoxEvent.Items.Count; i++)
+                {
+                    if (checkedListBoxEvent.GetItemCheckState(i) == CheckState.Checked)
+                        _selectedEvents.Add(checkedListBoxEvent.Items[i].ToString());
+                }
+                _GetPersonRecipient.ListIdRecipient = _selectedEvents;
             }
-            _GetPersonRecipient.ListIdRecipient = _selectedEvents;
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Сперва стоит выбрать подписчика.");
+                return;
+            }
         }
     }
 
