@@ -49,23 +49,23 @@ namespace MailingTool.EditClients
         {
             get { return _GetPersonRecipient; }
             set { if (_GetPersonRecipient != value)
-                {
-                    _GetPersonRecipient = value;
-
-                    Setup(); // сброс списков к начальному виду
-
-                    try
                     {
-                        comboBoxObject.SelectedIndex = comboBoxObject.FindStringExact(value.ObjectName); // поиск по слову
+                        _GetPersonRecipient = value;
 
-                        foreach (string s in value.ListIdRecipient)
+                        Setup(); // сброс списков к начальному виду
+
+                        try
                         {
-                            int valIndex = checkedListBoxEvent.FindStringExact(s); // это индекс объекта из списка.
-                            checkedListBoxEvent.SetItemChecked(valIndex, true);
+                            comboBoxObject.SelectedIndex = comboBoxObject.FindStringExact(value.ObjectName); // поиск по слову
+
+                            foreach (string s in value.ListIdRecipient)
+                            {
+                                int valIndex = checkedListBoxEvent.FindStringExact(s); // это индекс объекта из списка.
+                                checkedListBoxEvent.SetItemChecked(valIndex, true);
+                            }
                         }
+                        catch { }
                     }
-                    catch { }
-                }
                 }
         }
 
