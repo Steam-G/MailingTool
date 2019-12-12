@@ -58,7 +58,7 @@ namespace MailingTool.EditClients
                         {
                             comboBoxObject.SelectedIndex = comboBoxObject.FindStringExact(value.ObjectName); // поиск по слову
 
-                            foreach (string s in value.ListIdRecipient)
+                            foreach (string s in value.ListEventType)
                             {
                                 int valIndex = checkedListBoxEvent.FindStringExact(s); // это индекс объекта из списка.
                                 checkedListBoxEvent.SetItemChecked(valIndex, true);
@@ -95,7 +95,7 @@ namespace MailingTool.EditClients
                     if (checkedListBoxEvent.GetItemCheckState(i) == CheckState.Checked)
                         _selectedEvents.Add(checkedListBoxEvent.Items[i].ToString());
                 }
-                _GetPersonRecipient.ListIdRecipient = _selectedEvents;
+                _GetPersonRecipient.ListEventType = _selectedEvents;
             }
             catch(NullReferenceException)
             {

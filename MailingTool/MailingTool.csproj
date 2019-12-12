@@ -93,6 +93,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="EditClients\NameChangedEvent.cs" />
+    <Compile Include="Newsletter\MailingMechanism.cs" />
     <Compile Include="Newsletter\Newsletter.cs">
       <SubType>Form</SubType>
     </Compile>

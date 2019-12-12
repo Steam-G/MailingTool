@@ -20,7 +20,7 @@ namespace MailingTool
         public event NameChanged NoteChanged;
         public event NameChanged ObjectNameChanged;
 
-        public PersonRecipient(string organization, string recipientName, string email, string note, string objectName, List<string> listIdRecipient)
+        public PersonRecipient(string organization, string recipientName, string email, string note, string objectName, List<string> listEventType)
         {
             //...........
             Organization = organization;
@@ -28,7 +28,7 @@ namespace MailingTool
             EMail = email;
             Note = note;
             ObjectName = objectName;
-            ListIdRecipient = listIdRecipient;
+            ListEventType = listEventType;
         }
 
         #region Свойства
@@ -117,15 +117,15 @@ namespace MailingTool
             }
         }
 
-        List<string> listIdRecipient;
-        public List<string> ListIdRecipient
+        List<string> listEventType;
+        public List<string> ListEventType
         {
-            get { return listIdRecipient; }
+            get { return listEventType; }
             set
             {
                 if (value != null)
                 {
-                    listIdRecipient = value;
+                    listEventType = value;
                 }
 
             }
