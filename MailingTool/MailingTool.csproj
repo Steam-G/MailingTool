@@ -94,12 +94,6 @@
     </Compile>
     <Compile Include="EditClients\NameChangedEvent.cs" />
     <Compile Include="Newsletter\MailingMechanism.cs" />
-    <Compile Include="Newsletter\Newsletter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Newsletter\Newsletter.Designer.cs">
-      <DependentUpon>Newsletter.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditClients\Person.cs" />
     <Compile Include="EditClients\PersonRecipient.cs" />
     <Compile Include="Program.cs" />
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Newsletter\Newsletter.resx">
-      <DependentUpon>Newsletter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
