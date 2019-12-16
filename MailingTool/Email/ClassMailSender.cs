@@ -45,6 +45,35 @@ namespace MailingTool
             }
         }
 
+        public static void SendHtmlMail(string smtpServer, string from, string displayName, string password,
+        string mailto, string caption, string htmlBody, string attachFile = null)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(from, displayName);
+                mail.To.Add(new MailAddress(mailto));
+                mail.Subject = caption;
+                mail.IsBodyHtml = true;
+                mail.Body = htmlBody;
+                if (!string.IsNullOrEmpty(attachFile))
+                    mail.Attachments.Add(new Attachment(attachFile));
+                SmtpClient client = new SmtpClient();
+
+                client.Host = smtpServer;
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(from.Split('@')[0], password);
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.Send(mail);
+                mail.Dispose();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Mail.Send: " + e.Message);
+            }
+        }
+
         static string smtpServer;
         public string SMTPServer
         {
