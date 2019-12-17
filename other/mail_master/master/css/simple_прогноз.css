@@ -45,7 +45,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25; }
 
 h1 {
-  font-size: 32px; }
+  font-size: 32px;
+  color: #fff; }
 
 h2 {
   font-size: 28px; }
@@ -74,7 +75,7 @@ p, ul, ol {
     border-collapse: collapse; }
   .container .masthead {
     padding: 40px 0;
-    background: #71bc37;
+    background: #8637bc;
     color: white; }
     .container .masthead h1 {
       margin: 0 auto !important;
@@ -169,4 +170,10 @@ p, ul, ol {
 .tblcontent tr:last-child td.last {
     -moz-border-radius-bottomright:5px;
     -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
+}
+
+.css-adaptive {
+display: block;
+max-width: 100%;
+height: auto;
 }

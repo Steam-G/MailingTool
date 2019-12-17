@@ -57,7 +57,11 @@ namespace MailingTool
                 mail.IsBodyHtml = true;
                 mail.Body = htmlBody;
                 if (!string.IsNullOrEmpty(attachFile))
+                {
                     mail.Attachments.Add(new Attachment(attachFile));
+                    //mail.Attachments[0].IsInline = true;
+                    mail.Attachments[0].ContentId = "attachimg";
+                }
                 SmtpClient client = new SmtpClient();
 
                 client.Host = smtpServer;
