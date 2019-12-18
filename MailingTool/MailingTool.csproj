@@ -151,6 +151,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EmailTemplate\css\simple.css" />
+    <Content Include="EmailTemplate\css\simple_месяц.css" />
+    <Content Include="EmailTemplate\css\simple_неделя.css" />
+    <Content Include="EmailTemplate\css\simple_прогноз.css" />
+    <Content Include="EmailTemplate\css\simple_техсостояние.css" />
+    <Content Include="EmailTemplate\simple_ru_месяц.html" />
+    <Content Include="EmailTemplate\simple_ru_неделя.html" />
+    <Content Include="EmailTemplate\simple_ru_прогноз.html" />
+    <Content Include="EmailTemplate\simple_ru_сутки.html" />
+    <Content Include="EmailTemplate\simple_ru_техсостояние.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
