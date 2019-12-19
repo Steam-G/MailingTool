@@ -86,6 +86,12 @@
     <Compile Include="Email\EmailSenderForm.Designer.cs">
       <DependentUpon>EmailSenderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Email\EmailSenderParameter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Email\EmailSenderParameter.Designer.cs">
+      <DependentUpon>EmailSenderParameter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Email\EmailSenderForm.resx">
       <DependentUpon>EmailSenderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\EmailSenderParameter.resx">
+      <DependentUpon>EmailSenderParameter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

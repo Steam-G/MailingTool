@@ -64,6 +64,7 @@ namespace MailingTool.Newsletter
             personList.ReloadPersonList();
             recipients = personList.PersonList;
 
+            if (recipients!=null)
             for (int i = 0; i < recipients.Count; i++)
             {
                 foreach (string s in recipients[i].ListEventType)

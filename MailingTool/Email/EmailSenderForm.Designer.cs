@@ -52,6 +52,7 @@
             this.comboBoxServices = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.emailSenderParameter1 = new MailingTool.Email.EmailSenderParameter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,9 +77,9 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(268, 0);
+            this.panel1.Location = new System.Drawing.Point(465, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 389);
+            this.panel1.Size = new System.Drawing.Size(292, 360);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -89,16 +90,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 252);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(288, 137);
+            this.panel2.Size = new System.Drawing.Size(292, 108);
             this.panel2.TabIndex = 3;
             // 
             // btnTestSend
             // 
             this.btnTestSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTestSend.Location = new System.Drawing.Point(3, 105);
+            this.btnTestSend.Location = new System.Drawing.Point(3, 76);
             this.btnTestSend.Name = "btnTestSend";
-            this.btnTestSend.Size = new System.Drawing.Size(282, 23);
+            this.btnTestSend.Size = new System.Drawing.Size(286, 23);
             this.btnTestSend.TabIndex = 2;
             this.btnTestSend.Text = "Отправить тестовое письмо";
             this.btnTestSend.UseVisualStyleBackColor = true;
@@ -108,9 +109,9 @@
             // 
             this.txtTestAdr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTestAdr.Location = new System.Drawing.Point(3, 79);
+            this.txtTestAdr.Location = new System.Drawing.Point(3, 50);
             this.txtTestAdr.Name = "txtTestAdr";
-            this.txtTestAdr.Size = new System.Drawing.Size(282, 20);
+            this.txtTestAdr.Size = new System.Drawing.Size(286, 20);
             this.txtTestAdr.TabIndex = 1;
             this.txtTestAdr.Text = "Адрес для отправки";
             // 
@@ -134,7 +135,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 145);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 107);
+            this.groupBox3.Size = new System.Drawing.Size(292, 107);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Данные авторизации почтового ящика";
@@ -205,7 +206,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 57);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(288, 88);
+            this.groupBox2.Size = new System.Drawing.Size(292, 88);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Параметры почтового сервиса";
@@ -273,7 +274,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 57);
+            this.groupBox1.Size = new System.Drawing.Size(292, 57);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Почтовый сервис";
@@ -307,11 +308,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // emailSenderParameter1
+            // 
+            this.emailSenderParameter1.Location = new System.Drawing.Point(215, 12);
+            this.emailSenderParameter1.Name = "emailSenderParameter1";
+            this.emailSenderParameter1.Size = new System.Drawing.Size(229, 333);
+            this.emailSenderParameter1.TabIndex = 2;
+            // 
             // EmailSenderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 389);
+            this.ClientSize = new System.Drawing.Size(757, 360);
+            this.Controls.Add(this.emailSenderParameter1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -356,5 +365,6 @@
         private System.Windows.Forms.CheckBox checkSSL;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private Email.EmailSenderParameter emailSenderParameter1;
     }
 }
