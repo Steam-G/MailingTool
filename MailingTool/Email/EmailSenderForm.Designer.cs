@@ -327,6 +327,7 @@
             this.Controls.Add(this.button1);
             this.Name = "EmailSenderForm";
             this.Text = "Форма настройки и проверки почты";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmailSenderForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

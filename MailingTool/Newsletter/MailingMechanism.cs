@@ -20,6 +20,8 @@ namespace MailingTool.Newsletter
         {
             MailSender.SenderConfig(
                 "smtp.yandex.ru",
+                587,
+                true,
                 "prg.mail@yandex.ru",
                 "EmailSender(test)",
                 "!!mailbox@@");

@@ -102,6 +102,7 @@
             this.checkSSL.Size = new System.Drawing.Size(15, 14);
             this.checkSSL.TabIndex = 2;
             this.checkSSL.UseVisualStyleBackColor = true;
+            this.checkSSL.CheckedChanged += new System.EventHandler(this.parameterChanged);
             // 
             // txtPort
             // 
@@ -112,6 +113,7 @@
             this.txtPort.Size = new System.Drawing.Size(160, 20);
             this.txtPort.TabIndex = 1;
             this.txtPort.Text = "587";
+            this.txtPort.TextChanged += new System.EventHandler(this.parameterChanged);
             // 
             // txtServer
             // 
@@ -122,6 +124,7 @@
             this.txtServer.Size = new System.Drawing.Size(160, 20);
             this.txtServer.TabIndex = 1;
             this.txtServer.Text = "smtp.yandex.ru";
+            this.txtServer.TextChanged += new System.EventHandler(this.parameterChanged);
             // 
             // label4
             // 
@@ -198,6 +201,7 @@
             this.txtDisplayName.Size = new System.Drawing.Size(212, 20);
             this.txtDisplayName.TabIndex = 1;
             this.txtDisplayName.Text = "EmailSender(test)";
+            this.txtDisplayName.TextChanged += new System.EventHandler(this.parameterChanged);
             // 
             // txtPass
             // 
@@ -209,6 +213,7 @@
             this.txtPass.TabIndex = 1;
             this.txtPass.Text = "!!mailbox@@";
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.parameterChanged);
             // 
             // txtLogin
             // 
@@ -219,6 +224,7 @@
             this.txtLogin.Size = new System.Drawing.Size(160, 20);
             this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "prg.mail@yandex.ru";
+            this.txtLogin.TextChanged += new System.EventHandler(this.parameterChanged);
             // 
             // label5
             // 

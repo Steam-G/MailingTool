@@ -85,6 +85,20 @@ namespace MailingTool
             set { if (smtpServer != value) smtpServer = value; }
         }
 
+        static int port;
+        public int Port
+        {
+            get { return port; }
+            set { if (port != value) port = value; }
+        }
+
+        static bool sslstate;
+        public bool SSLstate
+        {
+            get { return sslstate; }
+            set { if (sslstate != value) sslstate = value; }
+        }
+
         static string from;
         public string From
         {
@@ -99,6 +113,13 @@ namespace MailingTool
             set { if (displayName != value) displayName = value; }
         }
 
+        //static string login;
+        //public string Login
+        //{
+        //    get { return login; }
+        //    set { if (login != value) login = value; }
+        //}
+
         static string password;
         public string Password
         {
@@ -106,16 +127,23 @@ namespace MailingTool
             set { if (password != value) password = value; }
         }
 
+
+
+
         /// <summary>
-        /// Параметры отправителя
+        /// 
         /// </summary>
         /// <param name="smtpServer">Имя SMTP-сервера</param>
+        /// <param name="port">Порт</param>
+        /// <param name="ssl">Использование протокола SSL</param>
         /// <param name="from">Адрес отправителя</param>
         /// <param name="displayName">Отображаемое имя отправителя</param>
         /// <param name="password">пароль к почтовому ящику отправителя</param>
-        public void SenderConfig(string smtpServer, string from, string displayName, string password)
+        public void SenderConfig(string smtpServer, int port, bool ssl, string from, string displayName, string password)
         {
             SMTPServer = smtpServer;
+            Port = port;
+            SSLstate = ssl;
             From = from;
             DisplayName = displayName;
             Password = password;
