@@ -310,9 +310,11 @@
             // 
             // emailSenderParameter1
             // 
-            this.emailSenderParameter1.Location = new System.Drawing.Point(215, 12);
+            this.emailSenderParameter1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.emailSenderParameter1.Location = new System.Drawing.Point(215, 0);
             this.emailSenderParameter1.Name = "emailSenderParameter1";
-            this.emailSenderParameter1.Size = new System.Drawing.Size(229, 333);
+            this.emailSenderParameter1.Size = new System.Drawing.Size(229, 360);
             this.emailSenderParameter1.TabIndex = 2;
             // 
             // EmailSenderForm
