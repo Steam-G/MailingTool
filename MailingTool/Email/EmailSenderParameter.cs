@@ -65,7 +65,12 @@ namespace MailingTool.Email
                 string emailtestsend = txtTestAdr.Text;
                 string caption = "Проверка работы почтовой службы";
                 string message = "Сообщение успешно доставлено, настройки верны.";
+                #region MyRegion
+                string emailHTML = @"";
+                #endregion
 
+                
+                
                 ClassMailSender.SendMail(server, login, displayname, pass, emailtestsend, caption, message, null);
             }
         }
