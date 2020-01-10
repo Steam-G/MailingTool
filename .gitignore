@@ -22,7 +22,10 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+#![Dd]ebug/Conf/
 ![Dd]ebug/Conf/
+/[Dd]ebug/Conf/*
+![Dd]ebug/Conf/.gitkeep
 
 # Visual Studio 2015 cache/options directory
 .vs/
